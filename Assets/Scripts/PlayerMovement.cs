@@ -2,32 +2,39 @@ using UnityEngine;
 
 public class PlayerMovement2 : MonoBehaviour
 {
+    [Header("Movement Settings")]
     [SerializeField]
-    private float maximumSpeed;
+    private float maximumSpeed = 5f;
 
     [SerializeField]
-    private float rotationSpeed;
+    private float rotationSpeed = 10f;
 
     [SerializeField]
-    private float jumpForce;
+    private float jumpForce = 10f;
 
     [SerializeField]
-    private float jumpButtonGracePeriod;
+    private float jumpButtonGracePeriod = 0.2f;
 
     [SerializeField]
     private Transform cameraTransform;
+
+    [Header("Ground Detection Settings")]
+    [SerializeField]
+    private float groundDetectionRadius = 0.3f; // Ajustable desde el inspector
+    [SerializeField]
+    private Vector3 groundDetectionOffset = new Vector3(0, -1f, 0); // Ajustable desde el inspector
+    [SerializeField]
+    private LayerMask groundLayer; // Define qué capas son consideradas suelo
 
     private Animator animator;
     private Rigidbody rb;
     private CapsuleCollider capsuleCollider;
 
-    private float originalStepOffset; // No se usa directamente, pero se conserva para claridad
     private float? lastGroundedTime;
     private float? jumpButtonPressedTime;
     private bool isJumping;
     private bool isGrounded;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -48,7 +55,7 @@ public class PlayerMovement2 : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             inputMagnitude /= 2;
-        }
+        } 
 
         animator.SetFloat("Input Magnitude", inputMagnitude, 0.05f, Time.deltaTime);
 
@@ -110,9 +117,22 @@ public class PlayerMovement2 : MonoBehaviour
 
     private bool CheckGrounded()
     {
-        // Verifica si el jugador está tocando el suelo usando el Capsule Collider
-        Vector3 capsuleBottom = new Vector3(transform.position.x, transform.position.y - capsuleCollider.height / 2 + capsuleCollider.radius, transform.position.z);
-        return Physics.CheckSphere(capsuleBottom, capsuleCollider.radius * 0.9f, LayerMask.GetMask("Ground"));
+        // Calcula la posición de la detección de suelo
+        Vector3 detectionPoint = transform.position + groundDetectionOffset;
+
+        // Verifica si el jugador está tocando el suelo
+        return Physics.CheckSphere(detectionPoint, groundDetectionRadius, groundLayer);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (capsuleCollider != null)
+        {
+            // Dibuja un gizmo para la detección de suelo
+            Gizmos.color = isGrounded ? Color.green : Color.red;
+            Vector3 detectionPoint = transform.position + groundDetectionOffset;
+            Gizmos.DrawWireSphere(detectionPoint, groundDetectionRadius);
+        }
     }
 
     private void OnApplicationFocus(bool focus)
