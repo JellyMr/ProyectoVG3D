@@ -7,6 +7,9 @@ public class HealthSystem : MonoBehaviour
     public float maxHealth = 100f; // Salud máxima del jugador
     public float currentHealth; // Salud actual del jugador
     public Image healthBar; // Imagen de la barra de vida (UI)
+    public GameOverScreen1 screen;
+    public 
+
 
     void Start()
     {
@@ -44,6 +47,9 @@ public class HealthSystem : MonoBehaviour
     private void Die()
     {
         Debug.Log("El jugador ha muerto.");
+        screen.Setup();
+        Destroy(gameObject);
+        Cursor.lockState = CursorLockMode.None;// Destruye el enemigo
         // Agrega lógica de muerte (reiniciar nivel, mostrar pantalla de derrota, etc.)
     }
 }
