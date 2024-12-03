@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -12,6 +13,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        StartCoroutine(FlashRed());
+
         currentHealth -= amount; // Reduce la salud
         Debug.Log($"{gameObject.name} recibió {amount} de daño. Salud restante: {currentHealth}");
 
@@ -20,6 +23,17 @@ public class EnemyHealth : MonoBehaviour
             Die();
         }
     }
+    private IEnumerator  FlashRed()
+    {
+        Renderer renderer = GetComponent<Renderer>();
+        Color originalColor = renderer.material.color;
+
+        renderer.material.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+
+        renderer.material.color = originalColor;
+    }
+
 
     private void Die()
     {

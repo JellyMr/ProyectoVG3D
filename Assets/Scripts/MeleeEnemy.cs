@@ -67,6 +67,9 @@ public class MeleeEnemy : MonoBehaviour
         }
     }
 
+   
+
+
     private IEnumerator DeactivateAfterTime()
     {
         animator.SetBool("IsAttacking", true);

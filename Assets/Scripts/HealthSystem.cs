@@ -8,6 +8,7 @@ public class HealthSystem : MonoBehaviour
     public float currentHealth; // Salud actual del jugador
     public Image healthBar; // Imagen de la barra de vida (UI)
     public GameOverScreen1 screen;
+    public GameObject UI;
     public 
 
 
@@ -47,7 +48,9 @@ public class HealthSystem : MonoBehaviour
     private void Die()
     {
         Debug.Log("El jugador ha muerto.");
+        UI.SetActive(false);
         screen.Setup();
+       
         Destroy(gameObject);
         Cursor.lockState = CursorLockMode.None;// Destruye el enemigo
         // Agrega lógica de muerte (reiniciar nivel, mostrar pantalla de derrota, etc.)

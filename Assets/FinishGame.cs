@@ -9,6 +9,7 @@ public class FinishGame : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("Winner");
         }
     }

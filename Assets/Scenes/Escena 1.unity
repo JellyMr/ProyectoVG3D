@@ -751,7 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8d68ae1e6d20a4390c5e30820d5539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disappearDelay: 1
+  disappearDelay: 0
   fadeDuration: 2
   targetColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &25572351 stripped
@@ -9253,6 +9253,7 @@ MonoBehaviour:
   currentHealth: 100
   healthBar: {fileID: 1064319612}
   screen: {fileID: 923771217}
+  UI: {fileID: 543789951}
 --- !u!4 &421129725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3305515359979094121, guid: 06e67c0ba8865ad45ae171d48b537c75, type: 3}
@@ -12589,7 +12590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8d68ae1e6d20a4390c5e30820d5539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disappearDelay: 1
+  disappearDelay: 0
   fadeDuration: 2
   targetColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &525331678 stripped
@@ -13383,11 +13384,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566519890169422006, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35406113
+      value: 6.557083
       objectReference: {fileID: 0}
     - target: {fileID: 1566519890169422006, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -156.81952
+      value: -136.69672
       objectReference: {fileID: 0}
     - target: {fileID: 1566519890169422006, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13420,6 +13421,18 @@ PrefabInstance:
     - target: {fileID: 2231169843603814924, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
       propertyPath: m_Name
       value: Alien Disparo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333628979721678711, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333628979721678711, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
+      propertyPath: detectionRange
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6030125188166684079, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17868,11 +17881,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4202843788597818, guid: b8afcb16b9632e344899c70492bcf933, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.242916
+      value: 1.6682281
       objectReference: {fileID: 0}
     - target: {fileID: 4202843788597818, guid: b8afcb16b9632e344899c70492bcf933, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -160.39671
+      value: -140.27391
       objectReference: {fileID: 0}
     - target: {fileID: 4202843788597818, guid: b8afcb16b9632e344899c70492bcf933, type: 3}
       propertyPath: m_LocalRotation.w
@@ -35626,11 +35639,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566519890169422006, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.28018188
+      value: 6.6309624
       objectReference: {fileID: 0}
     - target: {fileID: 1566519890169422006, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -156.98314
+      value: -136.86034
       objectReference: {fileID: 0}
     - target: {fileID: 1566519890169422006, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
       propertyPath: m_LocalRotation.w
@@ -35663,6 +35676,18 @@ PrefabInstance:
     - target: {fileID: 2231169843603814924, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
       propertyPath: m_Name
       value: Alien Disparo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333628979721678711, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333628979721678711, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
+      propertyPath: detectionRange
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6030125188166684079, guid: d9a65cf918d87ab41bbc3261d532ec08, type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50916,7 +50941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8d68ae1e6d20a4390c5e30820d5539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disappearDelay: 1
+  disappearDelay: 0
   fadeDuration: 2
   targetColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &1897535757 stripped
@@ -53343,11 +53368,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4202843788597818, guid: b8afcb16b9632e344899c70492bcf933, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.242916
+      value: 1.6682281
       objectReference: {fileID: 0}
     - target: {fileID: 4202843788597818, guid: b8afcb16b9632e344899c70492bcf933, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -160.39671
+      value: -140.27391
       objectReference: {fileID: 0}
     - target: {fileID: 4202843788597818, guid: b8afcb16b9632e344899c70492bcf933, type: 3}
       propertyPath: m_LocalRotation.w
